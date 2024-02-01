@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Special</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .checkbox-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .checkbox {
+            margin-right: 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zostaniesz moją walentynką?</h1>
+    <img src="kotek.jpg" alt="Cute Cat">
+
+    <div class="checkbox-container">
+        <label for="checkbox1" class="checkbox">
+            <input type="checkbox" id="checkbox1" onchange="showFlowers()"> Tak
+        </label>
+
+        <label for="checkbox2" class="checkbox">
+            <input type="checkbox" id="checkbox2" onchange="showFlowers()"> Tak
+        </label>
+    </div>
+
+    <img id="flowers" class="hidden" src="gozdziki.jpg" alt="Carnation Flowers">
+
+    <script>
+        function showFlowers() {
+            var flowersImage = document.getElementById("flowers");
+            var checkbox1 = document.getElementById("checkbox1");
+            var checkbox2 = document.getElementById("checkbox2");
+
+            if (checkbox1.checked || checkbox2.checked) {
+                flowersImage.classList.remove("hidden");
+            } else {
+                flowersImage.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
